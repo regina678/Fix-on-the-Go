@@ -1,0 +1,268 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(135deg, #ff0080, #ffbf00, #00ff80, #00aaff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: black;
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Overlay Effect for Readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+
+nav {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+nav a:active {
+    color: black;
+}
+
+   /*--------------------------------service------------------------*/
+#services {
+    padding: 60px 20px;
+}
+.about {
+    padding: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Glassmorphism Service Cards */
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    padding: 20px;
+}
+.services{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.service {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* User List (Divided into 2 Columns) */
+.user-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.user-list li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Service Buttons */
+.service button {
+    background: linear-gradient(to right, #ff8c00, #ff2e63);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.service button:hover {
+    background: linear-gradient(to right, #ff2e63, #ff8c00);
+    transform: scale(1.1);
+}
+
+
+   /*--------------------------------rating------------------------*/
+.rating-container {
+    margin-top: 15px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.stars i {
+    font-size: 24px;
+    color: #555;  
+    transition: color 0.3s ease-in-out;
+}
+
+.stars i:hover,
+.stars i.active {
+    color: #ff0080; 
+}
+
+
+   /*--------------------------------contact------------------------*/
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.form{
+    color: white;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: black;
+    color: white;
+}
+
+.button{
+    background: linear-gradient(to right, #ff8c00, #ff2e63);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.button:hover {
+    background: linear-gradient(to right, #ff2e63, #ff8c00);
+    transform: scale(1.1);
+}
+.co
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .button{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+   /*--------------------------------footer------------------------*/
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 300;
+    margin-top: 20px;
+    
+}
+.footer i{
+    color: #2600ff;
+}
