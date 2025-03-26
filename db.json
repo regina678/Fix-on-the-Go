@@ -1,0 +1,125 @@
+{
+    "services": [
+      {
+        "id": 1,
+        "name": "Tailoring",
+        "description": "Get custom-made clothes with professional tailors.",
+        "professionals": [
+          {
+            "name": "John Kioko",
+            "experience": "5 years",
+            "location": "Nairobi"
+          },
+          {
+            "name": "Fatuma Abdi",
+            "experience": "3 years",
+            "location": "Mombasa"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Mechanic",
+        "description": "Reliable car repair and maintenance services.",
+        "professionals": [
+          {
+            "name": "Michael Otieno",
+            "experience": "10 years",
+            "location": "Kisumu"
+          },
+          {
+            "name": "David Mwangi",
+            "experience": "7 years",
+            "location": "Nakuru"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Cleaning",
+        "description": "Professional home and office cleaning solutions.",
+        "professionals": [
+          {
+            "name": "Mary Chebet",
+            "experience": "4 years",
+            "location": "Eldoret"
+          },
+          {
+            "name": "Sarah Wambui",
+            "experience": "6 years",
+            "location": "Thika"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Plumbing",
+        "description": "Expert plumbing services for homes and businesses.",
+        "professionals": [
+          {
+            "name": "Chris Wekesa",
+            "experience": "8 years",
+            "location": "Bungoma"
+          },
+          {
+            "name": "Mark Kinyanjui",
+            "experience": "5 years",
+            "location": "Nyeri"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Catering",
+        "description": "Catering services for events, parties, and home dining.",
+        "professionals": [
+          {
+            "name": "Alice Moraa",
+            "experience": "12 years",
+            "location": "Kisii"
+          },
+          {
+            "name": "Ali Muhammed",
+            "experience": "9 years",
+            "location": "Malindi"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Gardening",
+        "description": "Landscaping and gardening services for homes and offices.",
+        "professionals": [
+          {
+            "name": "Tom Kipyegon",
+            "experience": "7 years",
+            "location": "Kericho"
+          },
+          {
+            "name": "Emma Reson",
+            "experience": "6 years",
+            "location": "Kajiado"
+          }
+        ]
+      }
+    ],
+    "bookings": [],
+    "contact": [
+        {
+          "id": 1,
+          "name": "Jane Doe",
+          "email": "jane.doe@example.com",
+          "message": "I am interested in tailoring services. How do I book a session?"
+
+        },
+        {
+          "id": 2,
+          "name": "Peter Njenga",
+          "email": "peter.njenga@example.com",
+          "message": "Do you offer car maintenance services in Nakuru?"
+
+        }
+      ]
+  }
+  
+  
