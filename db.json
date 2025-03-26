@@ -103,7 +103,16 @@
       ]
     }
   ],
-  "bookings": [],
+  "bookings": [
+    {
+      "fullName": "Lilian Mumbi",
+      "contactNumber": "0787654321",
+      "appointmentDateTime": "2025-03-31T16:45",
+      "paymentMethod": "MPesa",
+      "serviceName": "Tailoring",
+      "id": 1
+    }
+  ],
   "contact": [
     {
       "id": 1,
@@ -124,6 +133,19 @@
       "email": "wanjiru@gmail.com",
       "message": "do you clean bedsitters",
       "id": 1
+    },
+    {
+      "name": "owino molo",
+      "email": "molo@gmail.com",
+      "message": "do you have custom made wedding dresses",
+      "id": 2
+    },
+    {
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "message": "just greetings",
+      "id": 3
     }
-  ]
+  ],
+  "ratings": []
 }
