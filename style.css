@@ -26,7 +26,6 @@ body {
 }
 
 
-/* Overlay Effect for Readability */
 body::before {
     content: "";
     position: absolute;
@@ -47,7 +46,6 @@ header {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 
 }
-
 
 nav {
     padding: 15px;
@@ -150,6 +148,61 @@ nav a:active {
     transform: scale(1.1);
 }
 
+   /*--------------------------------testimonials------------------------*/
+#testimonials {
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+marquee {
+    display: flex;
+    gap: 20px;
+    white-space: nowrap;
+}
+
+.testimonial-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+    display: inline-block;
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.testimonial-box:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-box p {
+    font-size: 1rem;
+    font-style: italic;
+    margin: 10px 0;
+    line-height: 1.3;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 120px;
+}
+
+.testimonial-box h4 {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
 
    /*--------------------------------rating------------------------*/
 .rating-container {
