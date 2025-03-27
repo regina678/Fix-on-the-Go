@@ -1,128 +1,125 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript Loaded Successfully!");
 
-    // Contact Form Submission
+    // ✅ Contact Form Submission
     let contactForm = document.querySelector(".contact-right form");
 
-    if (!contactForm) {
-        console.error("Form not found! Make sure the form exists.");
-        return;
-    }
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+            let name = document.querySelector("input[name='Name']").value.trim();
+            let email = document.querySelector("input[name='email']").value.trim();
+            let message = document.querySelector("textarea[name='Message']").value.trim();
 
-        let name = document.querySelector("input[name='Name']").value.trim();
-        let email = document.querySelector("input[email='email']").value.trim();
-        let message = document.querySelector("textarea[name='Message']").value.trim();
-
-        if (!name || !email || !message) {
-            alert("Please fill in all fields!");
-            return;
-        }
-
-        let newContact = { name, email, message };
-
-        fetch("http://localhost:3000/contacts", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newContact)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Contact added:", data);
-            alert("Your message has been submitted!");
-            contactForm.reset();
-        })
-        .catch(error => console.error("Submission Error:", error));
-    });
-
-    // Service Booking on Double Click
-    const serviceContainers = document.querySelectorAll(".service");
-
-    serviceContainers.forEach(service => {
-        service.addEventListener("dblclick", () => {
-            if (service.querySelector(".booking-form")) {
+            if (!name || !email || !message) {
+                alert("Please fill in all fields!");
                 return;
             }
 
-            // Create booking form dynamically
-            const bookingForm = document.createElement("form");
-            bookingForm.classList.add("booking-form");
+            let newContact = { name, email, message };
 
-            bookingForm.innerHTML = `
-                <h3>Book This Service</h3>
-                <input type="text" id="fullName" placeholder="Full Name" required>
-                <input type="tel" id="contactNumber" placeholder="Contact Number" required>
-                <input type="datetime-local" id="appointmentDateTime" required>
-                <select id="paymentMethod">
-                    <option value="MPesa">MPesa</option>
-                    <option value="Credit Card">Credit Card</option>
-                    <option value="Cash">Cash</option>
-                </select>
-                <button type="submit">Confirm Booking</button>
-            `;
-
-            service.appendChild(bookingForm);
-
-            // Handle form submission
-            bookingForm.addEventListener("submit", (event) => {
-                event.preventDefault();
-
-                const bookingData = {
-                    fullName: document.getElementById("fullName").value,
-                    contactNumber: document.getElementById("contactNumber").value,
-                    appointmentDateTime: document.getElementById("appointmentDateTime").value,
-                    paymentMethod: document.getElementById("paymentMethod").value,
-                    serviceName: service.querySelector("h3").textContent
-                };
-
-                fetch("http://localhost:3000/bookings", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(bookingData)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert("Booking Confirmed!");
-                    bookingForm.remove();
-                })
-                .catch(error => console.error("Error:", error));
-            });
+            fetch("http://localhost:3000/contacts", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newContact)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Your message has been submitted!");
+                contactForm.reset();
+            })
+            .catch(error => console.error("Submission Error:", error));
         });
+    }
+
+    // ✅ Service Dropdown
+    const serviceDropdown = document.querySelector(".service-dropdown");
+
+    // ✅ Like/Unlike Functionality
+    const likeIcon = document.querySelector(".like-icon");
+    let likeData = { service: "", liked: false };
+
+    serviceDropdown.addEventListener("change", function () {
+        likeData.service = this.value;
     });
 
-    // Rating System
-    const ratingContainers = document.querySelectorAll(".rating-container");
+    likeIcon.addEventListener("click", () => {
+        if (!likeData.service) {
+            alert("Please select a service first!");
+            return;
+        }
 
-    ratingContainers.forEach(container => {
-        const stars = container.querySelectorAll(".stars i");
+        likeData.liked = !likeData.liked;
+        likeIcon.classList.toggle("liked", likeData.liked);
 
-        stars.forEach(star => {
-            star.addEventListener("click", function () {
-                const rating = this.getAttribute("data-value");
+        fetch("http://localhost:3000/interaction", {
+            method: likeData.liked ? "POST" : "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(likeData)
+        })
+        .catch(error => console.error("Error saving like status:", error));
+    });
 
-                // Remove active class from all stars
-                stars.forEach(s => s.classList.remove("active"));
+    // ✅ Commenting System
+    const commentBtn = document.querySelector(".comment-btn");
+    const commentInput = document.querySelector(".comment-input");
+    const commentList = document.querySelector(".comment-list");
 
-                // Add active class to selected stars
-                for (let i = 0; i < rating; i++) {
-                    stars[i].classList.add("active");
-                }
+    commentBtn.addEventListener("click", () => {
+        let commentText = commentInput.value.trim();
+        let selectedService = serviceDropdown.value;
 
-                // Send rating to the server
-                fetch("http://localhost:3000/ratings", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ rating: rating })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert("Thank you for your rating!");
-                    console.log("Rating submitted:", data);
-                })
-                .catch(error => console.error("Error submitting rating:", error));
-            });
+        if (!commentText) {
+            alert("Comment cannot be empty!");
+            return;
+        }
+
+        if (!selectedService) {
+            alert("Please select a service before commenting!");
+            return;
+        }
+
+        let commentData = { service: selectedService, comment: commentText };
+
+        fetch("http://localhost:3000/comments", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(commentData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            let listItem = document.createElement("li");
+            listItem.textContent = `${selectedService}: ${commentText}`;
+            commentList.appendChild(listItem);
+            commentInput.value = "";
+            alert("Your comment has been posted!");
+        })
+        .catch(error => console.error("Error saving comment:", error));
+    });
+
+    // ✅ Service Booking on Double Click
+    const serviceContainer = document.querySelector(".service");
+
+    serviceContainer.addEventListener("dblclick", () => {
+        if (serviceContainer.querySelector(".booking-form")) return;
+
+        const bookingForm = document.createElement("form");
+        bookingForm.classList.add("booking-form");
+        bookingForm.innerHTML = `
+            <h3>Book This Service</h3>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="tel" id="contactNumber" placeholder="Contact Number" required>
+            <input type="datetime-local" id="appointmentDateTime" required>
+            <button type="submit">Confirm Booking</button>
+        `;
+
+        serviceContainer.appendChild(bookingForm);
+
+        bookingForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            alert("Booking Confirmed!");
+            bookingForm.remove();
         });
     });
 });
