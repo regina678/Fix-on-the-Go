@@ -204,33 +204,80 @@ marquee {
     font-weight: bold;
 }
 
-   /*--------------------------------rating------------------------*/
-.rating-container {
-    margin-top: 15px;
+   /*--------------------------------interaction------------------------*/
+   .interaction-container {
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.stars {
+.like-section {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 5px;
-    cursor: pointer;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-.stars i {
+.like-icon {
     font-size: 24px;
-    color: #555;  
+    color: white;
+    cursor: pointer;
     transition: color 0.3s ease-in-out;
 }
 
-.stars i:hover,
-.stars i.active {
-    color: #ff0080; 
+.like-icon.liked {
+    color: pink;
 }
 
+.comment-section {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.comment-input {
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.comment-btn {
+    background: linear-gradient(to right, #ff8c00, #ff2e63);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.comment-btn:hover {
+    background: linear-gradient(to right, #ff2e63, #ff8c00);
+    transform: scale(1.1);
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.comment-list li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
 
    /*--------------------------------contact------------------------*/
 .container {
