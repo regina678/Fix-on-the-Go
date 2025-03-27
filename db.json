@@ -154,7 +154,23 @@
       "id": 3
     }
   ],
-  "likes": [],
+  "likes": [
+    {
+      "service": "Mechanic",
+      "liked": true,
+      "id": 1
+    },
+    {
+      "service": "Gardening",
+      "liked": true,
+      "id": 2
+    },
+    {
+      "service": "Plumbing",
+      "liked": true,
+      "id": 3
+    }
+  ],
   "comments": [
     {
       "service": "Cleaning",
