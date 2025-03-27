@@ -142,33 +142,10 @@
       "id": 1
     },
     {
-      "name": "owino molo",
-      "email": "molo@gmail.com",
-      "message": "do you have custom made wedding dresses",
+      "name": "Mercy Cherono",
+      "email": "mercy@gmail.com",
+      "message": "good",
       "id": 2
-    },
-    {
-      "name": "John Doe",
-      "email": "john@gmail.com",
-      "message": "just greetings",
-      "id": 3
-    }
-  ],
-  "likes": [
-    {
-      "service": "Mechanic",
-      "liked": true,
-      "id": 1
-    },
-    {
-      "service": "Gardening",
-      "liked": true,
-      "id": 2
-    },
-    {
-      "service": "Plumbing",
-      "liked": true,
-      "id": 3
     }
   ],
   "comments": [
@@ -176,6 +153,11 @@
       "service": "Cleaning",
       "comment": "my kabedsitter is spotless",
       "id": 1
+    },
+    {
+      "service": "Plumbing",
+      "comment": "pipes are all good",
+      "id": 2
     }
   ]
 }
