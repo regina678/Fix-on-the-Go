@@ -6,23 +6,10 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background: linear-gradient(135deg, #ff0080, #ffbf00, #00ff80, #00aaff);
+    background: linear-gradient(to bottom, skyblue, navy); 
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
     color: black;
-}
-
-/* Background Animation */
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 
@@ -50,7 +37,7 @@ header {
 nav {
     padding: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     gap: 30px;
 }
 
