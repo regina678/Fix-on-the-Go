@@ -111,6 +111,13 @@
       "paymentMethod": "MPesa",
       "serviceName": "Tailoring",
       "id": 1
+    },
+    {
+      "fullName": "Moses Kipruto",
+      "contactNumber": "0723187594",
+      "appointmentDateTime": "2025-04-09T08:30",
+      "serviceName": "Tailoring",
+      "id": 2
     }
   ],
   "contact": [
@@ -147,7 +154,7 @@
       "id": 3
     }
   ],
-  "interaction": [],
+  "likes": [],
   "comments": [
     {
       "service": "Cleaning",
