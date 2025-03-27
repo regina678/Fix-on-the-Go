@@ -204,33 +204,33 @@ marquee {
     font-weight: bold;
 }
 
-   /*--------------------------------interaction------------------------*/
-   .interaction-container {
-    text-align: center;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 20px;
-    width: 100%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+   /*--------------------------------Comment------------------------*/
 
-.like-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.like-icon {
+   .like-icon {
     font-size: 24px;
-    color: white;
+    color: black; 
     cursor: pointer;
     transition: color 0.3s ease-in-out;
 }
 
 .like-icon.liked {
-    color: pink;
+    color: #ff1493;
+}
+
+.service-dropdown {
+    width: 100%;
+    max-width: 250px; 
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid black; 
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+    margin-top: 20px; 
+    margin-bottom: 5px;
 }
 
 .comment-section {
@@ -258,6 +258,8 @@ marquee {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
 }
 
 .comment-btn:hover {
